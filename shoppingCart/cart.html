@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="cart_style.css">
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+
+      $.ajax({
+        type:'post',
+        url:'store_items.php',
+        data:{
+          total_cart_items:"totalitems"
+        },
+        success:function(response) {
+          document.getElementById("total_items").value=response;
+        }
+      });
+
+    });
+
+    function cart(id)
+    {
+	  var ele=document.getElementById(id);
+	  var img_src=ele.getElementsByTagName("img")[0].src;
+	  var name=document.getElementById(id+"_name").value;
+	  var price=document.getElementById(id+"_price").value;
+	
+	  $.ajax({
+        type:'post',
+        url:'store_items.php',
+        data:{
+          item_src:img_src,
+          item_name:name,
+          item_price:price
+        },
+        success:function(response) {
+          document.getElementById("total_items").value=response;
+        }
+      });
+	
+    }
+
+    function show_cart()
+    {
+      $.ajax({
+      type:'post',
+      url:'store_items.php',
+      data:{
+        showcart:"cart"
+      },
+      success:function(response) {
+        document.getElementById("mycart").innerHTML=response;
+        $("#mycart").slideToggle();
+      }
+     });
+
+    }
+	
+</script>
+  
+</head>
+
+<body>
+
+<p id="cart_button" onclick="show_cart();">
+  <img src="cart_icon.png">
+  <input type="button" id="total_items" value="">
+</p>
+
+<div id="mycart">
+</div>
+
+<p style="text-align:center;">
+  <a href="http://localhost/myfiles/loginboot/index2.php" target="_blank">
+  <img src="booking1.png" alt="Logo"
+    style="width:500px;height:300px;">
+  </a>
+  </p>
+
+<h1>BooKing's Signed Best Sellers</h1>
+
+<div id="item_div">
+
+  <div class="items" id="item1">
+    <img src="cover_277.jpg">
+    <input type="button" value="Add To CART" onclick="cart('item1')">
+    <p>Patrick Rothfuss - The Name of The Wind</p>
+    <p>Price - $125</p>
+    <input type="hidden" id="item1_name" value="Patrick Rothfuss Wind">
+    <input type="hidden" id="item1_price" value="$25">
+  </div>
+
+  <div class="items" id="item2">
+    <img src="cover-paperback-wise-man_277.jpg">
+    <input type="button" value="Add To CART" onclick="cart('item2')">
+    <p>Patrick Rothfuss - The Wise Man's Fear</p>
+    <p>Price - $125</p>
+    <input type="hidden" id="item2_name" value="Trendy T-Shirt With Back Design">
+    <input type="hidden" id="item2_price" value="$105">
+  </div>
+  
+  <div class="items" id="item3">
+    <img src="cover-slow-regard_277.jpg">
+    <input type="button" value="Add To CART" onclick="cart('item3')">
+    <p>Patrick Rothfuss - The Slow Regards Of Silent Things</p>
+    <p>Price - 125</p>
+    <input type="hidden" id="item3_name" value="Two Color Half-Sleeves T-Shirt">
+    <input type="hidden" id="item3_price" value="$120">
+  </div>
+
+  <div class="items" id="item4">
+    <img src="$_57.jpg">
+    <input type="button" value="Add To CART" onclick="cart('item4')">
+    <p>George RR Martin - A Game Of Thrones</p>
+    <p>Price - $220</p>
+    <input type="hidden" id="item4_name" value="Stylish Grey Chinos For Mens">
+    <input type="hidden" id="item4_price" value="$140">
+  </div>
+
+  <div class="items" id="item5">
+    <img src="s-l300.jpg">
+    <input type="button" value="Add To CART" onclick="cart('item5')">
+    <p>George RR Martin - A Storm Of Swords</p>
+    <p>Price - $330</p>
+    <input type="hidden" id="item5_name" value="Comfortable Pants For Working">
+    <input type="hidden" id="item5_price" value="$130">
+  </div>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Employee order input</title>
+</head>
+<body style="font-family: Arial">
+<h1><br>
+Customer Orders</h1>
+<p>Customer Order Form Search Request</S></p>
+
+<FORM ACTION="processorder.php" method=post>
+<table border=0>
+<tr>
+<td width=150>Book <br>
+&nbsp;</td>
+<td width=15>Book Isdn<br>
+&nbsp;</td>
+</tr>
+<tr>
+<td>Books</td>
+<td align="center"><input type="text" name="qtybases" size="3" maxlength="25"></td>
+</tr>
+<tr>
+<td>Accesories</td>
+<td align="center"><input type="text" name="qtystems" size="3" maxlength="3"></td>
+</tr>
+<tr>
+<td>Paper Supplies</td>
+<td align="center"><input type="text" name="qtytops" size="3" 
+maxlength="3"></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><br>
+<input type="submit" value="Enter Order"></td>
+</tr>
+</table>
+</form>
+
+LIST OF PURCHASED BOOKS:
+
+<BR>
+
+ECHO BOOKS IN CART.
+
+<BR><BR>
+BOOK NAME            BOOK ID                     BOOK COST                    QUANTITY
+
+
+<br><br>
+
+<input type="submit" name="mysubmit" value="Press to Order!" />
+
+</body>
+</html>
+
+</div>
+
+</body>
+</html>

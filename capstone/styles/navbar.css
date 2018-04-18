@@ -1,0 +1,50 @@
+body {
+	background-color: white;
+}
+
+.navbar {
+
+}
+
+.name-wrapper{
+	display: block;
+}
+
+.container {
+	display: inline;
+}
+
+.navbar-header {
+	display: inline;
+	float: left;
+
+}
+
+.navbar-collapse{
+	display: inline;
+}
+
+li{
+	display: inline;
+	padding-left: 10px;
+	width: 50px;
+
+}
+
+
+li a.button img.icon {
+	width: 25px;
+	height: 25px;
+
+}
+
+#search{
+	float: left-right;
+	width: 150px;
+}
+
+
+
+
+
+
