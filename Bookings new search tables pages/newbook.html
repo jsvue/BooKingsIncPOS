@@ -1,0 +1,88 @@
+
+
+   
+  
+
+<!DOCTYPE html>
+<html>
+<head>
+   <a href="http://localhost/myfiles/loginboot/index2.php" target="_blank">
+  <img src="booking1.png" alt="Logo"
+    style="width:200px;height:100px;"></a>
+  <title>BooKings - New Book Entry</title>
+
+  <style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+
+    <style type="text/css">
+
+      fieldset {
+         width: 75%;
+         border: 2px solid #cccccc;
+      }
+
+      label {
+         width: 75px;
+         float: left;
+         text-align: left;
+         font-weight: bold;
+      }
+
+      input {
+         border: 1px solid #000;
+         padding: 3px;
+      }
+
+
+
+    </style>
+</head>
+
+<body>
+  <h1>BooKings - New Book Entry</h1>
+
+  <form action="insert_book.php" method="post">
+
+  <fieldset>
+    <p><label for="ISBN">ISBN</label>
+    <input type="text" id="ISBN" name="ISBN" maxlength="13" size="13" /></p>
+
+    <p><label for="Author">Author</label>
+    <input type="text" id="Author" name="Author" maxlength="30" size="30" /></p>
+
+    <p><label for="Title">Title</label>
+    <input type="text" id="Title" name="Title" maxlength="60" size="30" /></p>
+  
+    <p><label for="Price">Price</label>
+    $ <input type="text" id="Price" name="Price" maxlength="7" size="7" /></p> 
+  </fieldset>
+  
+  <p><input type="submit" value="Add New Book" /></p>
+  
+
+  </form>
+</body>
+</html>

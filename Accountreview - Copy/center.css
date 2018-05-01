@@ -1,0 +1,36 @@
+body
+{
+	background: #0A0AFF;
+	padding: 0;
+	margin:0;
+}
+
+.container
+{
+	width: 600px;
+	height: 300px;
+	margin: 100px;
+	background: #ADD8E6;
+	position: relative;
+}
+
+.container h1
+{
+	margin: 0;
+	padding: 0;
+	font-family: arial;
+	font-size: 3mm;
+	text-transform: uppercase;
+	text-align: center;
+	position: top;
+	top: 50%;
+	color: #555;
+	transform: translateY(-50%);
+
+}
+.container h2
+{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
